@@ -54,7 +54,6 @@ interface Worker {
   verified: boolean;
   services: string[];
   experience: string;
-  availability: string;
 }
 
 const workers: Worker[] = [

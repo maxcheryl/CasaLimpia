@@ -1,5 +1,5 @@
 import { Heart } from "lucide-react";
-
+import logo from "../assets/logo.png";
 const Footer = () => {
   return (
     <footer className="bg-primary text-white py-12 animate-[fade-in_0.6s_ease-out]">
@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo + nombre */}
           <div className="flex items-center gap-3">
             <img
-              src="/public/logo.png"
+              src={logo} 
               alt="Casa Limpia Logo"
               className="h-12 w-16 object-contain"
             />

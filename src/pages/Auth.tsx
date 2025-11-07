@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sparkles, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-
+import logo from "../assets/logo.png";
 const Auth = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -46,7 +46,11 @@ const Auth = () => {
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-2xl bg-gradient-to-br from-primary to-accent">
-                <Sparkles className="h-8 w-8 text-white" />
+                 <img
+                  src={logo}
+                  alt="Casa Limpia Logo"
+                  className="h-9 w-10 object-contain"
+                />
               </div>
             </div>
             <CardTitle className="text-3xl font-bold">CasaLimpia</CardTitle>

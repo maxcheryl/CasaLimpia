@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Menu, X, LogIn } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import logo from "../assets/logo.png";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Navbar = () => {
              <span className="text-xl font-bold text-foreground">CasaLimpia</span>
             */}
             <div className="flex p-2 rounded-lg bg-gradient-to-br from-primary to-accent">
-             <img src="/public/logo.png" alt="Casa Limpia Logo" className="h-6 w-10 object-contain" />
+             <img src={logo} alt="Casa Limpia Logo" className="h-6 w-10 object-contain" />
               <span className="text-xl font-bold text-white">CasaLimpia</span>
             </div>
                 

@@ -69,7 +69,6 @@ const workers: Worker[] = [
     verified: true,
     services: ["Limpieza doméstica general", "Limpieza profunda", "Limpieza de vidrios o ventanales"],
     experience: "5 años de experiencia",
-    availability: "Disponible mañana",
   },
   {
     id: 1,
@@ -82,7 +81,6 @@ const workers: Worker[] = [
     verified: true,
     services: ["Limpieza profunda", "Desinfección y sanitización", "Limpieza de tapices y alfombras"],
     experience: "5 años de experiencia",
-    availability: "Disponible hoy",
   },
   {
     id: 2,
@@ -95,7 +93,6 @@ const workers: Worker[] = [
     verified: true,
     services: ["Limpieza de bodegas o garajes", "Limpieza de electrodomésticos", "Limpieza de autos"],
     experience: "7 años de experiencia",
-    availability: "Disponible mañana",
   },
   {
     id: 3,
@@ -108,7 +105,6 @@ const workers: Worker[] = [
     verified: true,
     services: ["Limpieza doméstica general", "Limpieza de piscinas", "Limpieza de muebles"],
     experience: "8 años de experiencia",
-    availability: "Disponible hoy",
   },
   {
     id: 4,
@@ -121,7 +117,6 @@ const workers: Worker[] = [
     verified: true,
     services: ["Limpieza doméstica general", "Limpieza profunda", "Limpieza de vidrios o ventanales"],
     experience: "4 años de experiencia",
-    availability: "Disponible pasado mañana",
   },
   {
     id: 5,
@@ -134,7 +129,6 @@ const workers: Worker[] = [
     verified: true,
     services: ["Limpieza de terrazas", "Limpieza profunda", "Limpieza de cortinas"],
     experience: "6 años de experiencia",
-    availability: "Disponible hoy",
   },
   {
     id: 6,
@@ -147,7 +141,6 @@ const workers: Worker[] = [
     verified: false,
     services: ["Limpieza post-construcción", "Limpieza doméstica general"],
     experience: "3 años de experiencia",
-    availability: "Disponible mañana",
   },
   {
     id: 7,
@@ -160,7 +153,6 @@ const workers: Worker[] = [
     verified: true,
     services: ["Limpieza doméstica general", "Limpieza profunda", "Limpieza de vidrios o ventanales"],
     experience: "6 años de experiencia",
-    availability: "Disponible hoy",
   },
 ];
 

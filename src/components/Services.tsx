@@ -101,7 +101,7 @@ const Services = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-6 mb-34">
                   {service.features.map((feature, idx) => (
                     <li
                       key={idx}

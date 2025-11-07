@@ -279,12 +279,14 @@ const Workers = () => {
                     <MapPin className="h-4 w-4 text-primary" />
                     <span className="text-sm">{worker.location}</span>
                   </div>
-
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Clock className="h-4 w-4 text-primary" />
-                    <span className="text-sm">{worker.availability}</span>
+ {/* disponibilidad 
+ <div className="flex items-center gap-2 text-muted-foreground">
+                   <Clock className="h-4 w-4 text-primary" />
+                   <span className="text-sm">{worker.availability}</span>
                   </div>
-
+ */}
+                  
+                  
                   <div className="pt-2 border-t">
                     <p className="text-sm text-muted-foreground mb-2">
                       {worker.experience}

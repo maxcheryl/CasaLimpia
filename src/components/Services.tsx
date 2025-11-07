@@ -40,7 +40,7 @@ const services = [
   {
     title: "Ofrecer Servicios",
     description:
-      "Regístrate como profesional y comienza a ofrecer tus servicios de limpieza. Gestiona tus reservas, pagos y evaluaciones desde un solo lugar.",
+      "Regístrate como profesional y comienza a ofrecer tus servicios de limpieza. Gestiona tus reservas y pagos desde un solo lugar.",
     image: officeImage,
     features: [
       "Crea tu perfil profesional",

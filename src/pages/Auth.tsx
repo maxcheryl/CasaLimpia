@@ -72,7 +72,7 @@ const Auth = () => {
                     <Input
                       id="login-email"
                       type="email"
-                      placeholder="tu@email.com"
+                      placeholder="dali@email.com"
                       required
                     />
                   </div>
@@ -125,7 +125,7 @@ const Auth = () => {
                     <Input
                       id="register-email"
                       type="email"
-                      placeholder="tu@email.com"
+                      placeholder="dali@email.com"
                       required
                     />
                   </div>

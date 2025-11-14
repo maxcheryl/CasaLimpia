@@ -18,12 +18,7 @@ const faqs = [
       {
         question: "¿Qué tipos de servicios ofrece CasaLimpia?",
         answer:
-          "CasaLimpia ofrece servicios de limpieza domiciliaria adaptados a tus necesidades: limpieza general, profunda, post-obra, por mudanza, de oficinas, cocinas, baños y ventanas. Todos los servicios son realizados por profesionales verificados de nuestra plataforma.",
-      },
-      {
-        question: "¿Cómo se determina la duración de un servicio?",
-        answer:
-          "La duración depende del tipo de limpieza y del tamaño del espacio. En general, una limpieza estándar puede tomar entre 2 y 4 horas, mientras que una limpieza profunda puede extenderse hasta 8 horas. Al reservar, la app te mostrará una estimación basada en los detalles que ingreses.",
+          "CasaLimpia ofrece servicios de limpieza domiciliaria adaptados a tus necesidades: limpieza general, profunda, post-obra, por mudanza, cocinas, baños y ventanas. Todos los servicios son realizados por profesionales verificados de nuestra plataforma.",
       },
       {
         question: "¿Los trabajadores llevan sus propios materiales de limpieza?",
@@ -35,16 +30,6 @@ const faqs = [
   {
     category: "Reservas y Pagos",
     questions: [
-      {
-        question: "¿Cómo puedo reservar un servicio en CasaLimpia?",
-        answer:
-          "Solo debes ingresar a la app, elegir el tipo de servicio, revisar la disponibilidad de trabajadores y seleccionar la fecha y hora que más te acomoden. Luego, confirmas tu reserva y recibes una notificación con todos los detalles.",
-      },
-      {
-        question: "¿Qué métodos de pago están disponibles?",
-        answer:
-          "CasaLimpia permite pagos electrónicos seguros mediante tarjetas de crédito, débito y transferencias bancarias. Todas las transacciones son procesadas por pasarelas certificadas y protegidas con cifrado SSL.",
-      },
       {
         question: "¿Puedo cancelar o reprogramar una reserva?",
         answer:
@@ -66,11 +51,6 @@ const faqs = [
           "Todos los trabajadores deben pasar un proceso de verificación que incluye validación de identidad, antecedentes y experiencia. Los perfiles verificados se identifican con un distintivo en la app, brindando mayor confianza a los clientes.",
       },
       {
-        question: "¿Qué puedo hacer si no estoy conforme con el servicio recibido?",
-        answer:
-          "Tu satisfacción es nuestra prioridad. Si el servicio no cumple tus expectativas, puedes reportarlo en la app dentro de las 24 horas posteriores. Nuestro equipo revisará el caso y gestionará una solución, que puede incluir reembolso o reprogramación del servicio.",
-      },
-      {
         question: "¿CasaLimpia ofrece algún tipo de seguro o protección?",
         answer:
           "CasaLimpia promueve que todos los trabajadores cuenten con seguro de responsabilidad civil. Además, las transacciones y datos personales están protegidos mediante protocolos de seguridad certificados.",
@@ -80,11 +60,6 @@ const faqs = [
   {
     category: "Para Trabajadores",
     questions: [
-      {
-        question: "¿Cómo puedo registrarme como trabajador en CasaLimpia?",
-        answer:
-          "Descarga la app CasaLimpia y selecciona la opción 'Ofrecer mis servicios'. Completa el formulario con tus datos personales, experiencia y disponibilidad. Nuestro equipo verificará tu información antes de activar tu perfil.",
-      },
       {
         question: "¿Cuándo recibo el pago de mis servicios?",
         answer:
@@ -98,7 +73,6 @@ const faqs = [
     ],
   },
 ];
-
 const FAQ = () => {
   const navigate = useNavigate();
 

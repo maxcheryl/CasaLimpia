@@ -222,10 +222,10 @@ const Testimonials = () => {
                   key={index}
                   className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="p-2 md:p-4 h-full">
-                    <Card className="border-2 h-full min-h-[450px] md:min-h-[500px] bg-gradient-to-b from-background to-primary/5 flex flex-col">
-                      <CardContent className="pt-4 md:pt-6 px-3 md:px-6 flex-1 flex flex-col">
-                        <div className="flex flex-col items-center text-center space-y-3 md:space-y-4">
+                  <div className="p-1 md:p-4 h-full">
+                    <Card className="border-2 h-full min-h-[380px] md:min-h-[500px] bg-gradient-to-b from-background to-primary/5 flex flex-col shadow-card">
+                      <CardContent className="pt-5 px-3 pb-4 md:pt-6 md:px-6 md:pb-6 flex-1 flex flex-col">
+                        <div className="flex flex-col items-center text-center space-y-2 md:space-y-4">
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
@@ -241,7 +241,7 @@ const Testimonials = () => {
                               )
                             )}
                           </div>
-                          <p className="text-sm md:text-base text-muted-foreground italic flex-1 overflow-y-auto max-h-[200px] md:max-h-[2500px]">
+                          <p className="text-sm md:text-base text-muted-foreground italic flex-1 leading-relaxed px-4 md:px-0">
                             "{testimonial.comment}"
                           </p>
                           <div>

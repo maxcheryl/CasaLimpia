@@ -6,6 +6,7 @@ import { Star, MapPin, CheckCircle, Clock, CalendarIcon } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 import {
   Dialog,
   DialogContent,
@@ -156,6 +157,7 @@ const workers: Worker[] = [
 ];
 
 const Workers = () => {
+  const { toast } = useToast();
   const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
   const [selectedWorker, setSelectedWorker] = useState<Worker | null>(null);
@@ -200,7 +202,14 @@ const Workers = () => {
     localStorage.setItem("pendingBooking", JSON.stringify(bookingData));
 
     // Redirigir al login
-    navigate("/auth");
+     toast({
+        title: "¡Datos guardados!",
+        description: "Inicia sesión o registrate para continuar.",
+      });
+
+      setTimeout(() => {
+        navigate("/auth");
+      }, 1000);
   };
 
   const isFormValid =

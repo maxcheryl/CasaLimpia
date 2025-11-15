@@ -5,7 +5,8 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Sparkles, ArrowLeft } from "lucide-react";
+import { Sparkles, ArrowLeft} from "lucide-react";
+import { FaGoogle, FaFacebook} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import logo from "../assets/logo.png";
@@ -46,14 +47,14 @@ const Auth = () => {
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-2xl bg-gradient-to-br from-primary to-accent">
-                 <img
+                <img
                   src={logo}
                   alt="Casa Limpia Logo"
                   className="h-9 w-10 object-contain"
                 />
               </div>
             </div>
-            <CardTitle className="text-3xl font-bold">CasaLimpia</CardTitle>
+          <CardTitle className="text-3xl font-bold">CasaLimpia</CardTitle>
             <CardDescription>
               Conectando clientes con profesionales de limpieza
             </CardDescription>
@@ -67,12 +68,44 @@ const Auth = () => {
 
               <TabsContent value="login">
                 <form onSubmit={handleLogin} className="space-y-4">
+                  <div className="space-y-3">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="w-full"
+                      size="lg"
+                    >
+                      <FaGoogle className="mr-2 h-4 w-4" />
+                      Continuar con Google
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="w-full"
+                      size="lg"
+                    >
+                      <FaFacebook className="mr-2 h-4 w-4" />
+                      Continuar con Facebook
+                    </Button>
+                  </div>
+
+                  <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <span className="w-full border-t" />
+                    </div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                      <span className="bg-background px-2 text-muted-foreground">
+                        O continúa con email
+                      </span>
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="login-email">Email</Label>
                     <Input
                       id="login-email"
                       type="email"
-                      placeholder="dali@email.com"
+                      placeholder="dalim@email.com"
                       required
                     />
                   </div>
@@ -99,6 +132,39 @@ const Auth = () => {
 
               <TabsContent value="register">
                 <form onSubmit={handleRegister} className="space-y-4">
+                  <div className="space-y-3">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="w-full"
+                      size="lg"
+                    >
+                      <FaGoogle className="mr-2 h-4 w-4" />
+                      Continuar con Google
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="w-full"
+                      size="lg"
+                    >
+                      <FaFacebook className="mr-2 h-4 w-4" />
+                      Continuar con Facebook
+                    </Button>
+                  
+                  </div>
+
+                  <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <span className="w-full border-t" />
+                    </div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                      <span className="bg-background px-2 text-muted-foreground">
+                        O regístrate con email
+                      </span>
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="user-type">Tipo de Usuario</Label>
                     <Select value={userType} onValueChange={setUserType} required>
@@ -125,7 +191,7 @@ const Auth = () => {
                     <Input
                       id="register-email"
                       type="email"
-                      placeholder="dali@email.com"
+                      placeholder="dalim@email.com"
                       required
                     />
                   </div>
@@ -164,4 +230,3 @@ const Auth = () => {
 };
 
 export default Auth;
-

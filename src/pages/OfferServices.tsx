@@ -75,13 +75,13 @@ const OfferServices = () => {
       console.log("Datos validados:", validated);
       
       toast({
-        title: "¡Solicitud enviada!",
-        description: "Inicia sesión para completar tu registro.",
+        title: "¡Datos guardados!",
+        description: "Registrate para continuar.",
       });
 
       setTimeout(() => {
         navigate("/auth");
-      }, 1500);
+      }, 1000);
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({

@@ -222,25 +222,99 @@ const Workers = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3 justify-center mb-12">
-            <Button
-              variant={selectedLocation === "all" ? "default" : "outline"}
-              onClick={() => setSelectedLocation("all")}
-              size="lg"
-            >
-              Todas las zonas
-            </Button>
-            {locations.slice(1).map((location) => (
+        {/* Filtro de Zonas - Versión Mejorada */}
+          <div className="max-w-5xl mx-auto mb-12">
+            <div className="flex items-center gap-3 mb-4 justify-center">
+              <MapPin className="w-5 h-5 text-primary" />
+              <h2 className="text-lg font-semibold text-foreground">
+                Selecciona una zona
+              </h2>
+            </div>
+            
+            {/* Vista Desktop: Botones con Contador */}
+            <div className="hidden md:flex flex-wrap gap-3 justify-center">
               <Button
-                key={location}
-                variant={selectedLocation === location ? "default" : "outline"}
-                onClick={() => setSelectedLocation(location)}
+                variant={selectedLocation === "all" ? "default" : "outline"}
+                onClick={() => setSelectedLocation("all")}
                 size="lg"
+                className="group relative overflow-hidden"
               >
-                {location}
+                <span className="relative z-10">Todas las zonas</span>
+                <Badge 
+                  variant="secondary" 
+                  className="ml-2 relative z-10 bg-background/20 group-hover:bg-background/30"
+                >
+                  {workers.length}
+                </Badge>
               </Button>
-            ))}
-          </div>
+              {locations.slice(1).map((location) => {
+                const count = workers.filter(w => w.location === location).length;
+                return (
+                  <Button
+                    key={location}
+                    variant={selectedLocation === location ? "default" : "outline"}
+                    onClick={() => setSelectedLocation(location)}
+                    size="lg"
+                    className="group relative overflow-hidden"
+                  >
+                    <MapPin className="w-4 h-4 mr-2 relative z-10" />
+                    <span className="relative z-10">{location}</span>
+                    <Badge 
+                      variant="secondary" 
+                      className="ml-2 relative z-10 bg-background/20 group-hover:bg-background/30"
+                    >
+                      {count}
+                    </Badge>
+                  </Button>
+                );
+              })}
+            </div>
+
+            {/* Vista Mobile: Select Mejorado */}
+            <div className="md:hidden">
+              <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+                <SelectTrigger className="w-full h-14 text-base border-2">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <SelectValue placeholder="Selecciona una zona" />
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all" className="text-base py-3">
+                    <div className="flex items-center justify-between w-full">
+                      <span>Todas las zonas</span>
+                      <Badge variant="secondary" className="ml-2">
+                        {workers.length}
+                      </Badge>
+                    </div>
+                  </SelectItem>
+                  {locations.slice(1).map((location) => {
+                    const count = workers.filter(w => w.location === location).length;
+                    return (
+                      <SelectItem key={location} value={location} className="text-base py-3">
+                        <div className="flex items-center justify-between w-full">
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4" />
+                            <span>{location}</span>
+                          </div>
+                          <Badge variant="secondary" className="ml-2">
+                            {count}
+                          </Badge>
+                        </div>
+                      </SelectItem>
+                    );
+                  })}
+                </SelectContent>
+              </Select>
+              
+              {/* Indicador de profesionales encontrados */}
+              <div className="mt-3 text-center">
+                <p className="text-sm text-muted-foreground">
+                  {filteredWorkers.length} {filteredWorkers.length === 1 ? 'profesional encontrado' : 'profesionales encontrados'}
+                </p>
+              </div>
+            </div>
+          </div>  
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredWorkers.map((worker) => (
@@ -278,14 +352,7 @@ const Workers = () => {
                     <MapPin className="h-4 w-4 text-primary" />
                     <span className="text-sm">{worker.location}</span>
                   </div>
- {/* disponibilidad 
- <div className="flex items-center gap-2 text-muted-foreground">
-                   <Clock className="h-4 w-4 text-primary" />
-                   <span className="text-sm">{worker.availability}</span>
-                  </div>
- */}
-                  
-                  
+
                   <div className="pt-2 border-t">
                     <p className="text-sm text-muted-foreground mb-2">
                       {worker.experience}

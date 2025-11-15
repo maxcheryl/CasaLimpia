@@ -30,13 +30,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm animate-[fade-in_0.5s_ease-out]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
             onClick={handleLogoClick}
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity animate-[fade-in_0.5s_ease-out]"
           >
             {/* 
             <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-accent">
@@ -45,13 +45,18 @@ const Navbar = () => {
              <span className="text-xl font-bold text-foreground">CasaLimpia</span>
             */}
             <div className="flex p-2 rounded-lg bg-gradient-to-br from-primary to-accent">
-             <img src={logo} alt="Casa Limpia Logo" className="h-6 w-10 object-contain" />
+              <img
+                src={logo}
+                alt="Casa Limpia Logo"
+                className="h-6 w-10 object-contain"
+              />
               <span className="text-xl font-bold text-white">CasaLimpia</span>
             </div>
-                
           </button>
+
+          {/* Desktop Navigation - Only show on Index page */}
           {location.pathname === "/" && (
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-8 animate-[fade-in_0.5s_ease-out_0.1s_both]">
               {navLinks.map((link) => (
                 <button
                   key={link.section}
@@ -64,7 +69,8 @@ const Navbar = () => {
             </div>
           )}
 
-          <div className="hidden md:flex items-center gap-3">
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-3 animate-[fade-in_0.5s_ease-out_0.2s_both]">
             <Button
               variant="outline"
               onClick={() => navigate("/auth")}
@@ -75,14 +81,16 @@ const Navbar = () => {
             </Button>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-primary transition-colors animate-[fade-in_0.5s_ease-out_0.1s_both]"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border bg-white">
             <div className="flex flex-col gap-4">
